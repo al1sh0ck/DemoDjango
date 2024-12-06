@@ -8,3 +8,5 @@ from .models import ContactPage
 class ContactPageAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'subject', 'message', 'id')
     search_fields = ('name', 'email', 'subject')
+class ProductsAdmin(admin.ModelAdmin):
+    list_display = ('')
