@@ -8,7 +8,16 @@ class ContactPage(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=100)
     message = models.TextField()
-class Products(models.Model):
+
+class ShortProd(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    price = models.IntegerField()
+    image = models.ImageField(upload_to='images/')
+
+
+class ProductsFullDesc(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     price = models.FloatField()
     brand_name = models.CharField(max_length=100)
