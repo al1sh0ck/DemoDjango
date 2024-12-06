@@ -20,8 +20,6 @@ class ProductsFullDesc(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     price = models.FloatField()
-    brand_name = models.CharField(max_length=100)
-    color = models.CharField(max_length=100)
     short_desc = models.CharField(max_length=500)
     width = models.CharField(max_length=100)
     height = models.CharField(max_length=100)

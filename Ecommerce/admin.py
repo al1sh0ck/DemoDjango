@@ -12,3 +12,6 @@ class ContactPageAdmin(admin.ModelAdmin):
 @admin.register(ShortProd)
 class ShortProdAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'image','id')
+@admin.register(ProductsFullDesc)
+class ProductFullDeskAdmin(admin.ModelAdmin):
+    list_display = ('id', 'name', 'price', 'image','short_desc', 'width','height','depth','weight','quality_checking','freshness_duration','when_packeting','each_box_contains','long_desc')

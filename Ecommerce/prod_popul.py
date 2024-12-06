@@ -1,41 +1,46 @@
+import os
+import django
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'DemoDjango.settings')
+django.setup()
+
 from Ecommerce.models import ShortProd
 
 products = [
     {
         "id": '1',
         "name": "addidas New Hammer sole for Sports person",
-        "price": '150.00',
-        "image": "Ecommerce\static\img\product\p1.jpg",
+        "price": 150.00,
+        "image": "static/img/product/p1.jpg",
     },
     {
-        "id": '1',
+        "id": '2',
         "name": "addidas New Hammer sole for Sports person",
-        "price": '150.00',
-        "image": "Ecommerce\static\img\product\p2.jpg",
+        "price": 150.00,
+        "image": "static/img/product/p2.jpg",
     },
     {
-        "id": '1',
+        "id": '3',
         "name": "addidas New Hammer sole for Sports person",
-        "price": '150.00',
-        "image": "Ecommerce\static\img\product\p3.jpg",
+        "price": 150.00,
+        "image": "static/img/product/p3.jpg",
     },
     {
-        "id": '1',
+        "id": '4',
         "name": "addidas New Hammer sole for Sports person",
-        "price": '150.00',
-        "image": "Ecommerce\static\img\product\p4.jpg",
+        "price": 150.00,
+        "image": "static/img/product/p4.jpg",
     },
     {
-        "id": '1',
+        "id": '5',
         "name": "addidas New Hammer sole for Sports person",
-        "price": '150.00',
-        "image": "Ecommerce\static\img\product\p5.jpg",
+        "price": 150.00,
+        "image": "static/img/product/p5.jpg",
     },
     {
-        "id": '1',
+        "id": '6',
         "name": "addidas New Hammer sole for Sports person",
-        "price": '150.00',
-        "image": "Ecommerce\static\img\product\p6.jpg",
+        "price": 150.00,
+        "image": "static/img/product/p6.jpg",
     }
 ]
 
