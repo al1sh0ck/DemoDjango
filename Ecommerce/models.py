@@ -23,18 +23,6 @@ class Products(models.Model):
     when_packeting=models.CharField(max_length=100)
     each_box_contains=models.CharField(max_length=100)
     long_desc=models.CharField(max_length=2000)
-
-
-#class DemoProduct(models.Model):
- #   id = models.AutoField(primary_key=True)
-  #  name = models.CharField(max_length=100)
-   # price = models.FloatField()
-    #category = models.CharField(max_length=100)
-    #image = models.ImageField(upload_to='images/')
-    #brand = models.CharField(max_length=100)
-    #color = models.CharField(max_length=100)
-    #short_desc = models.CharField(max_length=250)
-    #full_desc = models.CharField(max_length=1000)
-
+    image=models.ImageField(upload_to='products/')
 
 
