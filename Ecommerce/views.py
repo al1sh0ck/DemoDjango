@@ -1,10 +1,10 @@
 from operator import index
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .form import ContactForm
-from .models import ContactPage, ShortProd
+from .models import ContactPage, ShortProd, ProductsFullDesc
 from django import forms
 # Create your views here.
 def contact_view(request):
@@ -23,6 +23,11 @@ def category_view(request):
     context = {'products': products}
     return render(request, 'karma/category.html', context)
 
+def singprod(request):
+    product = ProductsFullDesc.objects.all()[0]
+    context = {'product': product}
+    return render(request, 'karma/single-product.html', context)
+
 class Blog(TemplateView):
     template_name = 'karma/Blog.html'
 class Cart(TemplateView):
@@ -39,7 +44,5 @@ class Login(TemplateView):
     template_name = 'karma/login.html'
 class Singleblog(TemplateView):
     template_name = 'karma/single-blog.html'
-class Singleproduct(TemplateView):
-    template_name = 'karma/single-product.html'
 class Tracking(TemplateView):
     template_name = 'karma/tracking.html'
