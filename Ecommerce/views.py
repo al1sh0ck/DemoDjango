@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .form import ContactForm
-from .models import ContactPage
+from .models import ContactPage, ShortProd
 from django import forms
 # Create your views here.
 def contact_view(request):
@@ -18,12 +18,15 @@ def contact_view(request):
 
     return render(request, 'karma/contact.html', {'form': form})
 
+def category_view(request):
+    products = ShortProd.objects.all()[:6]
+    context = {'products': products}
+    return render(request, 'karma/category.html', context)
+
 class Blog(TemplateView):
     template_name = 'karma/Blog.html'
 class Cart(TemplateView):
     template_name = 'karma/cart.html'
-class Category(TemplateView):
-    template_name = 'karma/category.html'
 class Checkout(TemplateView):
     template_name = 'karma/checkout.html'
 class Confirmation(TemplateView):
