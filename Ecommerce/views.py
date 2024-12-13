@@ -35,6 +35,20 @@ def blogs_view(request):
         blog.split_tags = blog.tags.split(',')  # Preprocess tags as a list
     return render(request, 'karma/blog.html', context)
 
+def single_blog_view(request):
+    blog = SingleBlogs.objects.first()  # Or use .get(id=1) if you want a specific blog
+
+    if not blog:
+        # Handle the case where no blogs are available, maybe show a 404 or error message
+        return render(request, 'karma/single-blog.html')
+    images = [img for img in [blog.image1, blog.image2, blog.image3, blog.image4, blog.image5] if img]
+    context = {
+        'blog': blog,
+        'images': images,
+    }
+
+    return render(request, 'karma/single-blog.html', context)
+
 class Cart(TemplateView):
     template_name = 'karma/cart.html'
 class Checkout(TemplateView):
@@ -47,7 +61,5 @@ class Index(TemplateView):
     template_name = 'karma/index.html'
 class Login(TemplateView):
     template_name = 'karma/login.html'
-class Singleblog(TemplateView):
-    template_name = 'karma/single-blog.html'
 class Tracking(TemplateView):
     template_name = 'karma/tracking.html'

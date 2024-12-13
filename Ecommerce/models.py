@@ -51,12 +51,18 @@ class SingleBlogs(models.Model):
     date = models.DateField()
     views = models.IntegerField()
     commentsAmount = models.IntegerField()
-    image = models.ImageField(upload_to='static/img/')
-    part1 = models.TextField()
-    part2 = models.TextField()
-    image1 = models.ImageField(upload_to='static/img/')
-    image2 = models.ImageField(upload_to='static/img/')
-    image3 = models.ImageField(upload_to='static/img/')
-    image4 = models.ImageField(upload_to='static/img/')
-    image5 = models.ImageField(upload_to='static/img/')
+    image = models.ImageField(upload_to='static/img/blog/', null=True, blank=True)
+    part1 = models.TextField(null=True, blank=True)
+    part2 = models.TextField(null=True, blank=True)
+    image1 = models.ImageField(upload_to='static/img/blog/', null=True, blank=True)
+    image2 = models.ImageField(upload_to='static/img/blog/', null=True, blank=True)
+    image3 = models.ImageField(upload_to='static/img/blog/', null=True, blank=True)
+    image4 = models.ImageField(upload_to='static/img/blog/', null=True, blank=True)
+    image5 = models.ImageField(upload_to='static/img/blog/', null=True, blank=True)
+
+    def split_tags(self):
+        return self.tags.split(',') if self.tags else []
+
+    def __str__(self):
+        return self.name
 
