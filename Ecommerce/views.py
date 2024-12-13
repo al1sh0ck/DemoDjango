@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from django.views.generic import TemplateView
 from .form import ContactForm
-from .models import ContactPage, ShortProd, ProductsFullDesc
+from .models import ContactPage, ShortProd, ProductsFullDesc, Blogs, SingleBlogs
 from django import forms
 # Create your views here.
 def contact_view(request):
@@ -28,8 +28,11 @@ def singprod(request):
     context = {'product': product}
     return render(request, 'karma/single-product.html', context)
 
-class Blog(TemplateView):
-    template_name = 'karma/Blog.html'
+def blogs_view(request):
+    blogs = Blogs.objects.all()[0]
+    context = {'Blogs': Blogs}
+    return render(request, 'karma/blog.html', context)
+
 class Cart(TemplateView):
     template_name = 'karma/cart.html'
 class Checkout(TemplateView):
