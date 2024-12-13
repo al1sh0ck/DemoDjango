@@ -13,7 +13,7 @@ class ShortProd(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     price = models.IntegerField()
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to='static/img/')
 
 
 class ProductsFullDesc(models.Model):
@@ -30,7 +30,7 @@ class ProductsFullDesc(models.Model):
     when_packeting=models.CharField(max_length=100)
     each_box_contains=models.CharField(max_length=100)
     long_desc=models.CharField(max_length=2000)
-    image=models.ImageField(upload_to='products/')
+    image=models.ImageField(upload_to='static/img/')
 
 class Blogs(models.Model):
     id = models.AutoField(primary_key=True)
@@ -41,7 +41,7 @@ class Blogs(models.Model):
     date = models.DateField()
     views = models.IntegerField()
     commentsAmount = models.IntegerField()
-    image = models.ImageField(upload_to='blogs/')
+    image = models.ImageField(upload_to='static/img/blog/')
 class SingleBlogs(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
@@ -51,12 +51,12 @@ class SingleBlogs(models.Model):
     date = models.DateField()
     views = models.IntegerField()
     commentsAmount = models.IntegerField()
-    image = models.ImageField(upload_to='blogs/')
+    image = models.ImageField(upload_to='static/img/')
     part1 = models.TextField()
     part2 = models.TextField()
-    image1 = models.ImageField(upload_to='blogs/')
-    image2 = models.ImageField(upload_to='blogs/')
-    image3 = models.ImageField(upload_to='blogs/')
-    image4 = models.ImageField(upload_to='blogs/')
-    image5 = models.ImageField(upload_to='blogs/')
+    image1 = models.ImageField(upload_to='static/img/')
+    image2 = models.ImageField(upload_to='static/img/')
+    image3 = models.ImageField(upload_to='static/img/')
+    image4 = models.ImageField(upload_to='static/img/')
+    image5 = models.ImageField(upload_to='static/img/')
 

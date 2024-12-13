@@ -29,8 +29,10 @@ def singprod(request):
     return render(request, 'karma/single-product.html', context)
 
 def blogs_view(request):
-    blogs = Blogs.objects.all()[0]
-    context = {'Blogs': Blogs}
+    blogs = Blogs.objects.all()
+    context = {'blogs': blogs}
+    for blog in blogs:
+        blog.split_tags = blog.tags.split(',')  # Preprocess tags as a list
     return render(request, 'karma/blog.html', context)
 
 class Cart(TemplateView):
