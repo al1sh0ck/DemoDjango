@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Product</title>
+</head>
+<body>
+    <h1>Create Product</h1>
+    <form method="POST" enctype="multipart/form-data" action="{% url 'create-product' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="{% url 'category' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</body>
+</html>

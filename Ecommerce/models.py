@@ -13,7 +13,9 @@ class ShortProd(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     price = models.IntegerField()
-    image = models.ImageField(upload_to='static/img/')
+    image = models.ImageField(upload_to='static/img/product/')
+    brand = models.CharField(max_length=100, null=True, blank=True)
+    color = models.CharField(max_length=100, null=True, blank=True)
 
 
 class ProductsFullDesc(models.Model):
@@ -21,6 +23,8 @@ class ProductsFullDesc(models.Model):
     name = models.CharField(max_length=100)
     price = models.FloatField()
     short_desc = models.CharField(max_length=500)
+    brand = models.CharField(max_length=100, null=True, blank=True)
+    color = models.CharField(max_length=100, null=True, blank=True)
     width = models.CharField(max_length=100)
     height = models.CharField(max_length=100)
     depth = models.CharField(max_length=100)
@@ -30,7 +34,7 @@ class ProductsFullDesc(models.Model):
     when_packeting=models.CharField(max_length=100)
     each_box_contains=models.CharField(max_length=100)
     long_desc=models.CharField(max_length=2000)
-    image=models.ImageField(upload_to='static/img/')
+    image=models.ImageField(upload_to='static/img/product/')
 
 class Blogs(models.Model):
     id = models.AutoField(primary_key=True)

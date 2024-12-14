@@ -19,6 +19,8 @@ urlpatterns = [
     path('single-product/', views.singprod, name='single-product'),
     path('blog/', views.blogs_view, name='blog'),
     path('tracking/', views.Tracking.as_view(), name='tracking'),
+    path('create-blog/', views.create_blog_view, name='create-blog'),
+    path('create-product/', views.create_product_view, name='create-product'),
 
 
 

@@ -1,5 +1,6 @@
 from django import forms
-from .models import ContactPage
+from .models import ContactPage, Blogs, ProductsFullDesc
+
 
 class ContactForm(forms.ModelForm):
     class Meta:
@@ -26,3 +27,20 @@ class ContactForm(forms.ModelForm):
                 'placeholder': 'Enter Message'
             }),
         }
+
+class BlogForm(forms.ModelForm):
+    class Meta:
+        model = Blogs
+        fields = ['name', 'description', 'tags', 'author', 'date', 'views', 'commentsAmount', 'image']
+        widgets = {
+            'description': forms.Textarea(attrs={'rows': 4}),
+            'tags': forms.TextInput(attrs={'placeholder': 'Comma-separated tags'}),
+            'date': forms.DateInput(attrs={'type': 'date'}),
+        }
+class ProductFullDescForm(forms.ModelForm):
+    class Meta:
+        model = ProductsFullDesc
+        fields = [
+            'name', 'price', 'short_desc', 'width', 'height', 'depth', 'weight',
+            'quality_checking', 'freshness_duration', 'when_packeting', 'each_box_contains', 'long_desc', 'image'
+        ]

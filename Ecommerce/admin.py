@@ -11,10 +11,10 @@ class ContactPageAdmin(admin.ModelAdmin):
     search_fields = ('name', 'email', 'subject')
 @admin.register(ShortProd)
 class ShortProdAdmin(admin.ModelAdmin):
-    list_display = ('name', 'price', 'image','id')
+    list_display = ('name', 'price', 'image','id', 'brand','color')
 @admin.register(ProductsFullDesc)
 class ProductFullDeskAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'price', 'image','short_desc', 'width','height','depth','weight','quality_checking','freshness_duration','when_packeting','each_box_contains','long_desc')
+    list_display = ('id', 'name', 'price', 'image','brand','color','short_desc', 'width','height','depth','weight','quality_checking','freshness_duration','when_packeting','each_box_contains','long_desc')
 @admin.register(Blogs)
 class BlogsAdmin(admin.ModelAdmin):
     list_display = ('id', 'description','tags','author','date','views','commentsAmount','image')
